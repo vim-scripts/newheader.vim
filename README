@@ -1,0 +1,76 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=938
+
+Just Another headerformatting script for C/C++. This one does not create headers conform some documenting standard but allows you to specify a template. The template may contain some keywords which are expanded. Start by pressing F7 while the cursor is on or a little above the function in question. If the script finds existing comments just above the function it will neatly format it into the template if the right keyword is found. Example (looking horrible in proportional fonts):
+
+" Example _c_header template file:
+" ==============================
+
+" /****************************************************************************
+"  *
+"  * NAME:        name                                    (date)
+"  *
+"  * DESCRIPTION: text
+"  *
+"  * ARGUMENTS:   args
+"  *
+"  * RETURNS:     -
+"  *
+"  * PRE:         -
+"  *
+"  * POST:        -
+"  ***************************************************************************/
+" 
+
+" Suppose you have this function:
+" ===============================
+
+" /* 
+"  * This is just a comment that is long enough to show the features of
+"  * newheader.vim. It will do some indenting for you and list your function
+"  * arguments
+"  */
+" 
+" static void show_header( int width, int length,
+"                          byte font, Language *language_selection,
+"                      byte color )
+" {
+"      ....
+" }
+
+
+" Result
+" ======
+
+" Place the cursor one or more lines before the function and press F7. It
+" gives you:
+"
+" /****************************************************************************
+"  *
+"  * NAME:        show_header                                    (2000 okt 27)
+"  *
+"  * DESCRIPTION: This is just a comment that is long enough to show the
+"  *              features of newheader.vim. It will do some indenting for you
+"  *              and list your function arguments
+"  *
+"  * ARGUMENTS:   width:
+"  *              length:
+"  *              font:
+"  *              *language_selection:
+"  *              color:
+"  *
+"  * RETURNS:     -
+"  *
+"  * PRE:         -
+"  *
+"  * POST:        -
+"  ****************************************************************************/
+" 
+" static void show_header( int width, int length,
+"                          byte font, Language *language_selection,
+"                      byte color )
+" {
+"      ....
+" }
+
+disclaimer:
+I'm using it a few years now, and it is a big timesaver. However, every new project requires me to do another generalisation on the script. If you think it may be usefull for you but produces odd results, drop me line.
